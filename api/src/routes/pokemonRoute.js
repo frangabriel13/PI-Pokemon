@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getAllInfo, getByName } = require('../controllers/pokemonController');
+const { getAllInfo } = require('../controllers/pokemonController');
 const { Pokemon, Type } = require('../db');
 
 
@@ -9,32 +9,31 @@ router.get("/", async (req, res) => {
   const name = req.query.name;
   let pokemonTotal = await getAllInfo();
   try {
-    if (name) {
+    if(name) {
       const pokeName = await pokemonTotal.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
       pokeName.length ?
       res.status(200).send(pokeName) :
-      res.status(404).send('No existe el pokemon')
+      res.status(404).send('No existe ningún pokemon con el nombre indicado')
     } else {
       res.status(200).send(pokemonTotal);
     }
   } catch (error) {
-    res.status(400).json({ msg: "No se encontro el pokemon solicitado" });
+    console.log(error);
   }
 });
 
 router.get("/:id", async (req, res) => {
-  const { id } = req.params;
+  const id = req.params.id;
   const pokemonTotal = await getAllInfo();
   try {
-    // const allPokemonsId = await getAllInfo();
-    if (id) {
-      const filterId = await pokemonTotal.filter((e) => e.id == id);
-      filterId.length ?
-      res.status(200).send(filterId) :
-      res.status(404).send('No se encontró')
+    if(id) {
+      const pokeId = await pokemonTotal.filter(el => el.id == id);
+      pokeId.length ?
+      res.status(200).send(pokeId) :
+      res.status(404).send('No se encontró ningún pokemon con el ID indicado')
     }
   } catch (error) {
-    res.status(400).send(error);
+    console.log(error);
   }
 });
 
@@ -63,9 +62,9 @@ router.post("/", async (req, res) => {
           weight,
           createdInDb,
         });
-        let typeofPokemon = await Type.findAll({ where: { name: type } });
-        createPokemon.addType(typeofPokemon);
-        res.status(200).send("El pokemon fue creado con exito");
+        let pokeType = await Type.findAll({ where: { name: type } });
+        createPokemon.addType(pokeType);
+        res.status(200).send("El pokemon fue creado con éxito");
       } catch (error) {
     console.log(error);
   }
