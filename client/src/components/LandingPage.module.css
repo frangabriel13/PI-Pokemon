@@ -1,0 +1,22 @@
+body {
+    background-image: url('./img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+}
+.title {
+    font-family: 'Bangers', cursive;
+    color: #FFCB05;
+    -webkit-text-stroke: 1.2px #0047AB;
+    /* text-stroke: 20px #0047AB; */
+  }
+
+  /* .title {
+    font-family: 'Bangers', cursive;
+    color: #FFCB05;
+    text-shadow:
+      -1px -1px 0 #0047AB,
+      1px -1px 0 #0047AB,
+      -1px 1px 0 #0047AB,
+      1px 1px 0 #0047AB;
+  } */
