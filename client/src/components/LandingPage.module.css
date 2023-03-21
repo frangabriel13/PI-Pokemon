@@ -1,22 +1,40 @@
 body {
-    background-image: url('./img/fondo.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* background-position: center; */
+  background-image: url('./img/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
-.title {
-    font-family: 'Bangers', cursive;
-    color: #FFCB05;
-    -webkit-text-stroke: 1.2px #0047AB;
-    /* text-stroke: 20px #0047AB; */
-  }
 
-  /* .title {
-    font-family: 'Bangers', cursive;
-    color: #FFCB05;
-    text-shadow:
-      -1px -1px 0 #0047AB,
-      1px -1px 0 #0047AB,
-      -1px 1px 0 #0047AB,
-      1px 1px 0 #0047AB;
-  } */
+.container {
+  background-color: rgba(218, 216, 216, 0.5);
+  border: 2px solid #160c05;
+  border-radius: 10px;
+  padding: 20px 20px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+  font-family: 'Bangers', cursive;
+  font-size: 60px;
+  color: #160c05;
+}
+
+button {
+  font-family: 'Ubuntu', cursive;
+  background-color: #a0222b;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+button:hover {
+  background-color: #be2c34;
+}

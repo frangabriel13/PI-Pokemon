@@ -4,10 +4,10 @@ import s from './LandingPage.module.css';
 
 function LandingPage() {
   return (
-    <div>
+    <div className={s.container}>
       <h1 className={s.title}>Bienvenidos al PI-Pokémon</h1>
       <Link to='/home'>
-        <button>Ingresar</button>
+        <button className={s.button}>Ingresar</button>
       </Link>
     </div>
   )

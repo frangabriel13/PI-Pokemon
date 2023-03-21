@@ -1,9 +1,10 @@
 import React from 'react';
+import s from './Card.module.css';
 
 function Card({ image, name, types, id }) {
   return(
-    <div>
-      <h2>{id}</h2>
+    <div className={s.card}>
+      {/* <h2>{id}</h2> */}
       <img src={image} alt="img not found" />
       <h3>{name}</h3>
       <h5>

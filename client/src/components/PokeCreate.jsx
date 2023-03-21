@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postPokemon, getTypes } from '../actions';
+import s from './PokeCreate.module.css';
 
 function validate(input) {
   let errors = {};
@@ -85,10 +86,11 @@ function PokeCreate() {
   return(
     <div>
       <Link to='/home'><button>Volver</button></Link>
+      <div className={s.container}>
       <h1>Crea tu pokémon</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
         <div>
-          <label>Nombre:</label>
+          <label>Nombre: </label>
           <input type="text" value={input.name} name='name' onChange={(e) => handleChange(e)} />
           {
             errors.name && (
@@ -97,31 +99,31 @@ function PokeCreate() {
           }
         </div>
         <div>
-          <label>Imagen:</label>
+          <label>Imagen: </label>
           <input type="text" value={input.image} name='image' onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label>HP:</label>
+          <label>HP: </label>
           <input type="number" value={input.hp} name='hp' onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label>Ataque:</label>
+          <label>Ataque: </label>
           <input type="number" value={input.attack} name='attack' onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label>Defensa:</label>
+          <label>Defensa: </label>
           <input type="number" value={input.defense} name='defense' onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label>Velocidad:</label>
+          <label>Velocidad: </label>
           <input type="number" value={input.speed} name='speed' onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label>Height:</label>
+          <label>Height: </label>
           <input type="number" value={input.height} name='height' onChange={(e) => handleChange(e)} />
         </div>
         <div>
-          <label>Weight:</label>
+          <label>Weight: </label>
           <input type="number" value={input.weight} name='weight' onChange={(e) => handleChange(e)} />
         </div>
         <select onChange={(e) => handleSelect(e)}>
@@ -131,17 +133,21 @@ function PokeCreate() {
             ))
           }
         </select>
-        <ul><li>{input.type.map(el => el + ', ')}</li></ul>
+        
         <button type='submit'>Crear Pokémon</button>
+        
       </form>
+      <div className={s.deleteType}>
       {
         input.type.map(el => 
-          <div>
+          <div className={s.deleteType2}>
             <p>{el}</p>
             <button onClick={() => handleDelete(el)}>x</button>
           </div>
         )
       }
+      </div>
+      </div>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
+import s from './Home.module.css';
 
 
 function Home() {
@@ -58,10 +59,13 @@ function Home() {
 
   return(
     <div>
-      <Link to='/pokemons'>Crear pokémon</Link>
-      <h1>PI-Pokémon</h1>
+      <h1 className={s.title}>PI-Pokémon</h1>
+      {/* <Link to='/pokemons'>Crear pokémon</Link> */}
+      <Link to='/pokemons'>
+        <button>Crear pokémon</button>
+      </Link>
       <button onClick={e => {handleClick(e)}}>Volver a cargar todos los pokémons</button>
-      <div>
+      <div className={s.selectors}>
         <select onChange={e => handleSort(e)}>
           <option value="asc">Ascendente</option>
           <option value="desc">Descendente</option>
@@ -98,24 +102,27 @@ function Home() {
           <option value="created">Creados</option>
           <option value="api">Existentes</option>
         </select>
+        
+        <SearchBar />
+        <div className={s.pokemonGrid}>
+          {
+            currentPokemons?.map(el => {
+              return(
+                <Fragment>
+                  {/* {console.log(el.id)} */}
+                  <Link className={s.link} to={'/pokemons/' + el.id}>
+                    <Card className={s.cardContainer} name={el.name} image={el.image} types={el.types} id={el.id} key={el.id} />
+                  </Link>
+                </Fragment>
+              )
+            })
+          }
+        </div>
         <Paginado 
           pokemonsPerPage={pokemonsPerPage}
           allPokemons={allPokemons.length}
           paginado={paginado}
         />
-        <SearchBar />
-        {
-          currentPokemons?.map(el => {
-            return(
-              <Fragment>
-                {/* {console.log(el.id)} */}
-                <Link to={'/pokemons/' + el.id}>
-                  <Card name={el.name} image={el.image} types={el.types} id={el.id} key={el.id} />
-                </Link>
-              </Fragment>
-            )
-          })
-        }
       </div>
     </div>
   )

@@ -1,0 +1,87 @@
+.container {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid #160c05;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+.container h1 {
+    font-family: 'Bangers', cursive;
+    color: #160c05;
+    font-size: 40px;
+}
+  
+.container form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.container label {
+    font-family: 'Ubuntu', cursive;
+    color: #160c05;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+.container input[type='text'],
+ .container input[type='number'],
+  .container select {
+    font-family: 'Ubuntu', cursive;
+    color: #160c05;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+  }
+  
+.container input[type='text']:focus,
+ .container input[type='number']:focus,
+ .container select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  }
+
+
+  .deleteType {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+  }
+  .deleteType2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+  }
+  
+  .deleteType2 p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  .deleteType2 button {
+    font-family: 'Ubuntu', cursive;
+  background-color: #a0222b;
+  border: none;
+  color: white;
+  padding: 1px 8px 4px 8px;
+  font-size: 18px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 2px;
+  }
+
+ .deleteType2 button:hover {
+    background-color: #be2c34;
+  }

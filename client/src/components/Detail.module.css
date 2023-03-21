@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detailCard {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 5px solid #160c05;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .detailCard img {
+    border-radius: 20px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  .detailCard div {
+    width: 50%;
+    padding-left: 20px;
+  }
+  
+  .detailCard h1 {
+    font-family: 'Bangers', cursive;
+    color: #160c05;
+    font-size: 40px;
+    margin-top: 0;
+  }
+  
+  .detailCard h2 {
+    font-family: 'Ubuntu', cursive;
+    color: #160c05;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .detailCard p {
+    font-family: 'Ubuntu', cursive;
+    color: #160c05;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .detailCard > div:first-child {
+    height: 100%;
+  }
