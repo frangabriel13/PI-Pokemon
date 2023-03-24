@@ -1,12 +1,10 @@
 const axios  = require ('axios');
-const { Pokemon, Type } = require('../db');
+const { Type } = require('../db');
+
 
 const onlyAllTypes = async () => {
     try {
       const response = await axios.get("https://pokeapi.co/api/v2/type");
-      const types = response.data.results;
-      // console.log(types);
-      // const allTypes = types.map((el) => el.name);
       const allTypes = response.data.results.map((el) => el.name);
       return allTypes;
     } catch (error) {
@@ -17,7 +15,6 @@ const onlyAllTypes = async () => {
   const saveAllTypes = async () => {
     try {
       const types = await onlyAllTypes();
-      // console.log(types)
       types.forEach(type => {
         Type.findOrCreate({ where: { name: type } });
       });
@@ -37,5 +34,50 @@ const onlyAllTypes = async () => {
   };
 
 
-
 module.exports = getAllTypes;
+
+
+
+
+// __________________________________________________________________________________
+
+// PROMESAS
+
+
+// const axios = require('axios');
+// const { Type } = require('../db');
+
+// const onlyAllTypes = () => {
+//   return axios.get('https://pokeapi.co/api/v2/type')
+//     .then((response) => {
+//       const allTypes = response.data.results.map((el) => el.name);
+//       return allTypes;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
+// const saveAllTypes = () => {
+//   return onlyAllTypes()
+//     .then((types) => {
+//       types.forEach((type) => {
+//         Type.findOrCreate({ where: { name: type } });
+//       });
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
+// const getAllTypes = () => {
+//   return saveAllTypes()
+//     .then(() => {
+//       return Type.findAll();
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
+// module.exports = getAllTypes;
