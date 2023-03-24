@@ -13,11 +13,11 @@ function Home() {
   const dispatch = useDispatch();
   const allPokemons = useSelector((state) => state.pokemons);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(12);
-  const indexOfLastPokemon = currentPage * pokemonsPerPage; //1*12 = 12
-  const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; //12 - 12 = 0
-  const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
+  const [currentPage, setCurrentPage] = useState(1); //setea la página actual en 1
+  const [pokemonsPerPage, setPokemonsPerPage] = useState(12); //setea la cant de pj por página en 12
+  const indexOfLastPokemon = currentPage * pokemonsPerPage; //1*12=12  2*12=24 índice del primer pj de next page
+  const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; //12-12=0 24-12=12
+  const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); //recorto el array
   const [orden, setOrden] = useState('');
 
 
@@ -33,7 +33,7 @@ function Home() {
     e.preventDefault();
     dispatch(getPokemons());
   }
-
+ 
   function handleFilterType(e) {
     dispatch(filterByType(e.target.value));
   }

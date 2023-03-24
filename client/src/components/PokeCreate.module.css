@@ -25,7 +25,7 @@
     font-family: 'Ubuntu', cursive;
     color: #160c05;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   
 .container input[type='text'],
@@ -33,7 +33,7 @@
   .container select {
     font-family: 'Ubuntu', cursive;
     color: #160c05;
-    margin-bottom: 20px;
+    margin-top: 10px;
     border: none;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -84,4 +84,11 @@
 
  .deleteType2 button:hover {
     background-color: #be2c34;
+  }
+
+  .error {
+    font-family: 'Ubuntu', cursive;
+    font-size: 12px;
+    color: #a0222b;
+    margin-top: 0px;
   }

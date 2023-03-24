@@ -3,7 +3,7 @@ import s from './Paginado.module.css';
 
 function Paginado({ pokemonsPerPage, allPokemons, paginado }) {
   const pageNumbers = [];
-  for(let i = 0; i <= Math.ceil(allPokemons / pokemonsPerPage); i++) {
+  for(let i = 0; i < Math.ceil(allPokemons / pokemonsPerPage); i++) { //0; 0 < 4; 1++/ 1 2 3 4
     pageNumbers.push(i + 1)
   }
 

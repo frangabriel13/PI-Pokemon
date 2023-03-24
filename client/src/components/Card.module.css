@@ -1,42 +1,35 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    /* border: 2px solid #ccc; */
-    border-radius: 5px;
-    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    /* background-color: #a0222b; */
-    background-color: rgba(160, 34, 43, 0.8);
+    display: flex; /* contenedor de flexbox */
+    flex-direction: column; /*  dirección de los elementos como columnas */
+    align-items: center; /*  alineación vertical del contenido en el centro del contenedor */
+    padding: 10px; /* relleno */
+    border-radius: 5px; /* esquinas redondeadas */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* sombra suave */
+    background-color: rgba(160, 34, 43, 0.8); /* color de fondo poco transparente */
   }
   
-  .card img {
-    width: 80%;
-    height: 200px;
-    object-fit: contain;
-    margin-bottom: 10px;
-    text-decoration: none;
+  .imageCard {
+    width: 80%; /* ancho de la imagen en un 80% del ancho del contenedor */
+    height: 200px; /* altura de la imagen */
+    object-fit: contain; /* establece cómo la imagen debe ajustarse al tamaño del contenedor */
+    margin-bottom: 10px; /* margen inferior */
   }
   
-  .card h3 {
-    font-family: 'Bangers', cursive;
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-    margin: 0 0 5px 0;
+  .cardName {
+    font-family: 'Bangers', cursive; /* fuente */
+    color: white; /* color de fuente */
+    font-size: 30px; /* tamaño */
+    margin: 0 0 5px 0; /* margen inferior 5px */
   }
   
-  .card h5 {
-    font-family: 'Ubuntu', cursive;
-    font-size: 20px;
-    color: white;
-    margin: 0;
-    text-align: center;
+  .pokeTypes {
+    font-family: 'Ubuntu', cursive; /* fuente */
+    font-size: 20px; /* tamaño */
+    color: white; /* color */
+    margin: 0; /* o márgenes */
   }
 
   .card:hover {
-    background-color: #160c05;
+    background-color: #160c05; /* cambia color de fondo al pasar con mouse */
   }
   

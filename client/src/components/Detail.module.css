@@ -1,56 +1,63 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* flexbox */
+    flex-direction: column; /* dirección en columna */
+    align-items: center; /* color de fondo */
   }
   
   .detailCard {
     display: flex;
-    justify-content: space-between;
-    border-radius: 20px;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    border-radius: 20px; /* borde redondeado */
     border: 5px solid #160c05;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
-    padding: 20px;
+    width: 100%; /* ancho completo del contenedor */
+    max-width: 800px; /* ancho máximo de 800px */
+    margin-top: 20px; /* margen superior */
+    padding: 20px; /* relleno */
     background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* sombra*/
   }
   
-  .detailCard img {
-    border-radius: 20px;
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
+  .pokeImg {
+    border-radius: 20px; /* borde redondeado */
+    width: 100%; /* ancho completo del contenedor */
+    /* object-fit: cover; */
+    /* height: 100%; */
   }
   
   .detailCard div {
-    width: 50%;
-    padding-left: 20px;
+    width: 50%; /* ancho */
+    padding-left: 20px; /* relleno */
   }
   
-  .detailCard h1 {
+  .pokemonName {
     font-family: 'Bangers', cursive;
     color: #160c05;
     font-size: 40px;
     margin-top: 0;
   }
   
-  .detailCard h2 {
+  .pokemonType {
     font-family: 'Ubuntu', cursive;
     color: #160c05;
     margin-top: 20px;
-    font-size: 1.2rem;
+    font-size: 20px;
   }
   
   .detailCard p {
     font-family: 'Ubuntu', cursive;
     color: #160c05;
-    font-size: 1.1rem;
+    font-size: 18px;
     margin-top: 10px;
     margin-bottom: 5px;
   }
-  
-  .detailCard > div:first-child {
-    height: 100%;
-  }
+  /* primer elemento hijo de detailCard debe tener una altura del 100% */
+  /* .detailCard > div:first-child {
+    height: 100%; 
+  } */
+
+.loading {
+  font-family: 'Ubuntu', cursive;
+  color: #160c05;
+  font-size: 20px;
+}
