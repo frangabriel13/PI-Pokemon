@@ -117,6 +117,10 @@ function PokeCreate() {
   }
 
   useEffect(() => {
+    setErrors(validate(input));
+  }, [input]);
+
+  useEffect(() => {
     dispatch(getTypes());
   }, [])
 
