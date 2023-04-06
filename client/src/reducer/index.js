@@ -30,6 +30,10 @@ function rootReducer(state = initialState, action) {
         allPokemons.filter(el => el.types.some(t => t.name === action.payload || t === action.payload));
         // se utiliza el método some() para verificar si el array de objetos types contiene algún objeto con la propiedad name igual a action.payload, o si el array de strings types contiene algún string igual a action.payload. De esta manera, se pueden filtrar los pokemones correctamente independientemente de la estructura del array types.
         // console.log(typeFiltered);
+        // allPokemons.filter(el => {
+        //   const types = el.types.map(type => type.name || type);
+        //   return types.includes(action.payload);
+        // });
       return {
         ...state,
         pokemons: typeFiltered

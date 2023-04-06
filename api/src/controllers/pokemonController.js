@@ -86,34 +86,34 @@ module.exports = {
 
 // const getApiInfo = () => {
 //   return axios.get(`https://pokeapi.co/api/v2/pokemon`)
-//   .then((response) => {
-//     return axios.get(response.data.next)
-//     .then((apiNext) => {
-//       const allPokemons = response.data.results.concat(apiNext.data.results)
-//       return Promise.all(
-//         allPokemons.map((el) => {
-//           return axios.get(el.url)
-//           .then((url) => {
-//             return {
-//               id: url.data.id,
-//               name: url.data.name,
-//               hp: url.data.stats[0].base_stat,
-//               attack: url.data.stats[1].base_stat,
-//               defense: url.data.stats[2].base_stat,
-//               speed: url.data.stats[5].base_stat,
-//               height: url.data.height,
-//               weight: url.data.weight,
-//               image: url.data.sprites.other.dream_world.front_default,
-//               types: url.data.types.map((t) => t.type.name),
-//             };
+//     .then((response) => {
+//       return axios.get(response.data.next)
+//       .then((apiNext) => {
+//         const allPokemons = response.data.results.concat(apiNext.data.results)
+//         return Promise.all(
+//           allPokemons.map((el) => {
+//             return axios.get(el.url)
+//               .then((url) => {
+//                 return {
+//                   id: url.data.id,
+//                   name: url.data.name,
+//                   hp: url.data.stats[0].base_stat,
+//                   attack: url.data.stats[1].base_stat,
+//                   defense: url.data.stats[2].base_stat,
+//                   speed: url.data.stats[5].base_stat,
+//                   height: url.data.height,
+//                   weight: url.data.weight,
+//                   image: url.data.sprites.other.dream_world.front_default,
+//                   types: url.data.types.map((t) => t.type.name),
+//                 };
+//               })
 //           })
-//         })
-//       )
+//         )
+//       })
 //     })
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   })
+//     .catch((error) => {
+//       console.log(error);
+//     })
 // };
 
 // const getDbInfo = () => {
@@ -132,17 +132,14 @@ module.exports = {
 // };
 
 // const getAllInfo = () => {
-//   return Promise.all([
-//     getDbInfo(),
-//     getApiInfo()
-//   ])
-//   .then(([dbInfo, apiInfo]) => {
-//     const allInfo = dbInfo.concat(apiInfo);
-//     return allInfo;
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+//   return Promise.all([getDbInfo(), getApiInfo()])
+//     .then(([dbInfo, apiInfo]) => {
+//       const allInfo = dbInfo.concat(apiInfo);
+//       return allInfo;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
 // };
 
 // module.exports = {

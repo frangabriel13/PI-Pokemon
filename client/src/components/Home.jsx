@@ -46,21 +46,22 @@ function Home() {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
     setCurrentPage(1);
-    setOrden(`Ordenado ${e.target.value}`);
+    // setOrden(`Ordenado ${e.target.value}`);
+    setOrden(`${e.target.value}`);
   }
 
   function handleSortAtt(e) {
     e.preventDefault();
     dispatch(orderByAttack(e.target.value));
     setCurrentPage(1);
-    setOrden(`Ordenado ${e.target.value}`);
+    // setOrden(`Ordenado ${e.target.value}`);
+    setOrden(`${e.target.value}`);
   }
 
 
   return(
     <div>
       <h1 className={s.title}>PI-Pokémon</h1>
-      {/* <Link to='/pokemons'>Crear pokémon</Link> */}
       <Link to='/pokemons'>
         <button>Crear pokémon</button>
       </Link>
@@ -111,7 +112,8 @@ function Home() {
                 <Fragment>
                   {/* {console.log(el.id)} */}
                   <Link className={s.link} to={'/pokemons/' + el.id}>
-                    <Card className={s.cardContainer} name={el.name} image={el.image} types={el.types} id={el.id} key={el.id} />
+                    <Card className={s.cardContainer} name={el.name} image={el.image} types={el.types} id={el.id} attack={el.attack} 
+                      key={el.id} />
                   </Link>
                 </Fragment>
               )

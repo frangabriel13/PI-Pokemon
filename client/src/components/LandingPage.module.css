@@ -1,41 +1,41 @@
 body {
-  background-image: url('./img/fondo.jpg');  /* imagen de fondo */
+  background-image: url('./img/fondo.jpg');
   background-size: cover; /* ajusta la imagen al ancho y alto de la página, sin distorsionarla, recortando el exceso */
-  background-repeat: no-repeat; /* solo se mostrará una vez sin repetirse */
-  background-position: center; /* posición inicial de la imagen: centro de la página vertical y horizontalmente */
+  background-repeat: no-repeat; 
+  background-position: center;
   background-attachment: fixed; /* fija en su posición inicial mientras el contenido de la página se desplaza */
 }
 
 .container {
-  background-color: rgba(218, 216, 216, 0.5); /* tono grisáceo semi-transparente */
-  border: 2px solid #160c05; /* borde de 2 píxeles de ancho con un tono marrón oscuro */
-  border-radius: 10px; /* redondea las esquinas */
-  padding: 80px 20px; /* relleno de 80 píxeles superior e inferior y 30 píxeles en los lados */
-  position: absolute; /* posicionado de forma absoluta con respecto a su contenedor sin afectar a otros elementos */
+  background-color: rgba(218, 216, 216, 0.5); 
+  border: 2px solid #160c05;
+  border-radius: 10px; 
+  padding: 80px 20px; 
+  position: absolute;
   top: 50%; /* posición vertical y horizontal del elemento, se posicionará en el centro del contenedor padre*/
   left: 50%; /* solo definir estos valores no garantiza que el elemento esté centrado */
   transform: translate(-50%, -50%);  /* ajusta la posición del elemento en relación con su punto de origen */
-  /*  la combinación permite posicionar un elemento de forma precisa en el centro de su contenedor padre, sin importar su tamaño o dimensiones */
+  /*  la combinación permite posicionar un elemento de forma precisa en el centro de su contenedor padre */
 }
 
 .title {
-  font-family: 'Bangers', cursive; /* fuente del título */
-  font-size: 60px; /* tamaño de la fuente */
-  color: #160c05; /* color de la fuente */
+  font-family: 'Bangers', cursive;
+  font-size: 60px; 
+  color: #160c05; 
 }
 
 button {
-  font-family: 'Ubuntu', cursive; /* fuente del botón */
-  background-color: #a0222b; /* color de fondo */
-  border: none; /* elimino el borde */
-  color: white; /* color de la fuente */
-  padding: 8px 16px; /* relleno (top/bottom - right/left) */
-  font-size: 18px; /* tamaño de la fuente */
-  margin: 4px 2px; /* márgenes */
-  cursor: pointer; /* cambia el cursor al pasar por arriba */
-  border-radius: 2px; /* redondea las esquinas */
+  font-family: 'Ubuntu', cursive; 
+  background-color: #a0222b; 
+  border: none; 
+  color: white; 
+  padding: 8px 16px; 
+  font-size: 18px;
+  margin: 4px 2px; 
+  cursor: pointer; 
+  border-radius: 2px; 
 }
 
 button:hover {
-  background-color: #be2c34; /* cambiar el color de fondo del botón cuando el mouse está sobre él */
+  background-color: #be2c34;
 }

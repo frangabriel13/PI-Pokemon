@@ -22,8 +22,9 @@ function validate(input) {
   if(!input.defense || input.defense > 150 || input.hp < 0) {
     errors.defense = 'Se requiere una defensa de entre 0 y 150';
   }
-  // console.log(errors);
+  console.log(errors);
   return errors;
+  // return Object.keys(errors).length === 0 ? null : errors;
 }
 
 function PokeCreate() {
@@ -63,6 +64,31 @@ function PokeCreate() {
     })
     // console.log(input);
   }
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   // console.log(input);
+  //   setErrors(validate(input))
+  //   // validate(input)
+  //   if(errors) {
+  //     alert('Te faltan llenar campos');
+  //   } else {
+  //     dispatch(postPokemon(input));
+  //     alert('Pokémon creado correctamente');
+  //     setInput({
+  //       name: '',
+  //       image: '',
+  //       hp: '',
+  //       attack: '',
+  //       defense: '',
+  //       speed: '',
+  //       height: '',
+  //       weight: '',
+  //       type: []
+  //     })
+  //     history.push('/home');
+  //   } 
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
