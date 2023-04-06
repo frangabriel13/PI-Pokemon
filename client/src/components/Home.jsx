@@ -36,6 +36,7 @@ function Home() {
  
   function handleFilterType(e) {
     dispatch(filterByType(e.target.value));
+    setCurrentPage(1);
   }
 
   function handleFilterCreated(e) {

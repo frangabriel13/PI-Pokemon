@@ -17,6 +17,7 @@ function SearchBar() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(getNamePokemon(name));
+    // console.log(name);
   }
 
   return(
