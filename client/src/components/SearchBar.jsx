@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getNamePokemon } from '../actions';
 import s from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar(props) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
 
@@ -16,6 +16,7 @@ function SearchBar() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    props.setCurrentPage(1);
     dispatch(getNamePokemon(name));
     // console.log(name);
   }

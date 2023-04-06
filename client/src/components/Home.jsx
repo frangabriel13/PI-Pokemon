@@ -41,6 +41,7 @@ function Home() {
 
   function handleFilterCreated(e) {
     dispatch(filterCreated(e.target.value));
+    setCurrentPage(1);
   }
 
   function handleSort(e) {
@@ -105,7 +106,7 @@ function Home() {
           <option value="api">Existentes</option>
         </select>
         
-        <SearchBar />
+        <SearchBar setCurrentPage={setCurrentPage} />
         <div className={s.pokemonGrid}>
           {
             currentPokemons?.map(el => {
